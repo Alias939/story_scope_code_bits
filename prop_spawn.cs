@@ -1,3 +1,7 @@
+//simple script to spawn props in a scene using fiducial markers
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
