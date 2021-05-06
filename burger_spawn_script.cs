@@ -1,4 +1,6 @@
-﻿using System.Collections;
+//spawn random elements over time and destroy them after exiting scene
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +21,7 @@ public class spawn_script : MonoBehaviour
 
     void Update()
     {
-        if (!free)
+        if (!free)          //enable or disable movement on rails
         {
             meat.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
             salad.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
