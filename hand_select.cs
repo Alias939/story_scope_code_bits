@@ -1,4 +1,6 @@
-﻿using System.Collections;
+//script for selecting element after hovering over it for some time with a fiducial marker
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
