@@ -1,3 +1,5 @@
+//simple radial menu using fiducial marker rotation
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -73,18 +75,17 @@ public class MenuScript : MonoBehaviour
         Selection = (int)(currentAngle / (45/Sensitivity));
         Selection %= 8;
 
-        //if(Selection != previousSelection)
-        //{
+
         foreach(GameObject previousMenuPiece in menuItems)
         {
             menuPiece = previousMenuPiece.GetComponent<MenuPieceScript>();
-            menuPiece.Deselect();
+            menuPiece.Deselect();           //unhighlits a section of the menu
         }
         
         previousSelection = Selection;
 
         menuPiece = menuItems[Selection].GetComponent<MenuPieceScript>();
-        menuPiece.Select();
+        menuPiece.Select();     //highlits a section of the menu
         
        // }
 
