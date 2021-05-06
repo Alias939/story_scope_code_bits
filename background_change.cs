@@ -1,3 +1,7 @@
+//simple script to change sprite of a background object and mask the change behind an animation
+//the menus are controlled by fiducial markers
+//in the inspector in unity multiple elements need to be linked
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,22 +40,21 @@ public class background_change : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animation_time = animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
-        if (!menu.activeInHierarchy)
+        animation_time = animator.GetCurrentAnimatorStateInfo(0).normalizedTime;    //to get the time of the animation
+        if (!menu.activeInHierarchy)                //when fiducial marker is not visible, the menu disappears
         {
-            previousSelected = Selected;
+            previousSelected = Selected;            //to prevent the background changing constantly
             Selected = menuScript.Selection;
             if (Selected != previousSelected)
             {
-                animator.SetTrigger("transition");
+                animator.SetTrigger("transition");      //trigger animation
                 
 
 
             }
-            //not very pretty wip
-            if (animation_time >0.5 & animation_time <0.7)
+            if (animation_time >0.5 & animation_time <0.7)      //when animation is halfway through
             {
-                renderer.sprite = backgrounds[Selected];
+                renderer.sprite = backgrounds[Selected];        //trigger change based on selected background
             }
         }
     }
