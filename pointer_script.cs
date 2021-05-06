@@ -1,4 +1,6 @@
-﻿using System.Collections;
+//script for changing game scenes after selecting element with fiducial marker
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
